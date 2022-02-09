@@ -12,23 +12,27 @@ var menuItems = [
         items: [
             {
                 id: 'seat -1',
-                title: 'Drivers'
+                title: 'Driver'
+            },
+            {
+                id: 'seat 0',
+                title: 'Passenger'
             },
             {
                 id: 'seat 1',
-                title: 'Seat 1'
+                title: 'Back 1'
             },
             {
                 id: 'seat 2',
-                title: 'Seat 2'
+                title: 'Back 2'
             },
             {
                 id: 'seat 3',
-                title: 'Seat 3'
+                title: 'Back 3'
             },
             {
                 id: 'seat 4',
-                title: 'Seat 4'
+                title: 'Back 4'
             }
         ]
     },
@@ -121,7 +125,7 @@ function NUIclose() {
         body: JSON.stringify({
             itemId: 'close'
         })
-    }).then(resp => resp.json()).then(resp => console.log(resp));
+    }).then(resp => resp.json());
 }
 
 function NUIcommand(commandString) {
@@ -133,5 +137,5 @@ function NUIcommand(commandString) {
         body: JSON.stringify({
             itemId: commandString
         })
-    }).then(resp => resp.json()).then(resp => console.log(resp));
+    }).then(resp => resp.json());
 }

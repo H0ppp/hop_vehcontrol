@@ -2,12 +2,11 @@
 -- Variables
 ------------------------------------------------
 windows = {true, true, true, true}
---               FR FL BR BL
 ------------------------------------------------
 -- Functions
 ------------------------------------------------
 
-function doorToggle(door) 
+function doorToggle(door) -- Check door is open/closed and do opposite
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1))
     if GetVehicleDoorAngleRatio(vehicle, door) > 0.0 then
         SetVehicleDoorShut(vehicle, door, false, false)
@@ -16,7 +15,7 @@ function doorToggle(door)
     end
 end
 
-function windowToggle(window, door)
+function windowToggle(window, door) -- Check window is open/closed and do opposite
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1))
     if GetIsDoorValid(vehicle,door) and windows[window+1] then 
         RollDownWindow(vehicle, window)
@@ -27,7 +26,7 @@ function windowToggle(window, door)
     end
 end
 
-function engineToggle()
+function engineToggle() -- Check engine is on/off and do opposite
     local player = GetPlayerPed(-1)
     local vehicle = GetVehiclePedIsIn(player)
     if(GetPedInVehicleSeat(vehicle,-1) == player) then
@@ -36,6 +35,14 @@ function engineToggle()
         else
             SetVehicleEngineOn(vehicle,true,false,true)
         end
+    end
+end
+
+function changeSeat(seat) -- Check seat is empty and move to it
+    local player = GetPlayerPed(-1)
+    local vehicle = GetVehiclePedIsIn(player)
+    if(IsVehicleSeatFree(vehicle,seat)) then
+        SetPedIntoVehicle(player, vehicle, seat)
     end
 end
 
@@ -90,4 +97,9 @@ end, false)
 
 RegisterCommand("engine", function()
     engineToggle()
+end, false)
+
+RegisterCommand("seat",function(source, args, raw)
+    local seat = tonumber(args[1])
+    changeSeat(seat)
 end, false)
