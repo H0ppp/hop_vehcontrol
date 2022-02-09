@@ -5,8 +5,12 @@ FiveM vehicle control commands with a radial menu taken from [Axln - Radial Menu
 - Door/Window Commands
 - Engine on/off Command
 - Radial menu using F1 to use commands
+- Icons for each fuction
 ## Images
-![Example](/example.jpg)
+![Example](examples/main.jpg)
+![Doors](examples/doors.jpg)
+![Seats](examples/seats.jpg)
+![Windows](examples/windows.jpg)
 ## Installation
 - Place hop_vehcontrol in your resources folder.
 - Add start hop_vehcontrol to your server.cfg
