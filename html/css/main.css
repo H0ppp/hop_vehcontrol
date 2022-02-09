@@ -3,16 +3,6 @@ body {
 	font-size: 13px;
 }
 
-h1 {
-	font-size: 24px;
-	font-weight: normal;
-	color: white;
-}
-
-button {
-	font-size: 16px;
-}
-
 #icons {
 	display: none;
 }

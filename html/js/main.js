@@ -3,13 +3,34 @@
 var menuItems = [
     {
         id   : 'trunk',
-        title: 'Trunk',
-        icon: '#walk'
+        title: 'Trunk'
     },
     {
-        id   : 'lights',
-        title: 'Lights',
-        icon: '#run'
+        id   : 'seat',
+        title: 'Seats',
+        icon: '#more',
+        items: [
+            {
+                id: 'seat -1',
+                title: 'Drivers'
+            },
+            {
+                id: 'seat 1',
+                title: 'Seat 1'
+            },
+            {
+                id: 'seat 2',
+                title: 'Seat 2'
+            },
+            {
+                id: 'seat 3',
+                title: 'Seat 3'
+            },
+            {
+                id: 'seat 4',
+                title: 'Seat 4'
+            }
+        ]
     },
     {
         id   : 'engine',
@@ -18,32 +39,27 @@ var menuItems = [
     },
     {
         id   : 'hood',
-        title: 'Hood',
-        icon: '#fight'
+        title: 'Hood'
     },
     {
-        id   : 'more',
+        id   : 'window',
         title: 'Windows',
         icon: '#more',
         items: [
             {
                 id: 'rlwindow',
-                icon: '#firearm',
                 title: 'RL Window'
             },
             {
                 id: 'flwindow',
-                icon: '#firearm',
                 title: 'FL Window'
             },
             {
                 id: 'frwindow',
-                icon: '#firearm',
                 title: 'FR Window'
             },
             {
                 id: 'rrwindow',
-                icon: '#firearm',
                 title: 'RR Window'
             }
         ]
@@ -55,22 +71,18 @@ var menuItems = [
         items: [
             {
                 id: 'rldoor',
-                icon: '#firearm',
                 title: 'RL Door'
             },
             {
                 id: 'fldoor',
-                icon: '#firearm',
                 title: 'FL Door'
             },
             {
                 id: 'frdoor',
-                icon: '#firearm',
                 title: 'FR Door'
             },
             {
                 id: 'rrdoor',
-                icon: '#firearm',
                 title: 'RR Door'
             }
         ]
@@ -90,18 +102,6 @@ window.onload = function () {
         }
     });
 
-    var openMenu = document.getElementById('openMenu');
-    openMenu.onclick = function () {
-        svgMenu.open();
-    };
-
-    var closeMenu = document.getElementById('closeMenu');
-
-    closeMenu.onclick = function () {
-        svgMenu.close();
-        NUIclose();
-
-    };
 
     window.addEventListener('message', (event) => {
         if (event.data.type === 'open') {
