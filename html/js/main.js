@@ -3,7 +3,8 @@
 var menuItems = [
     {
         id   : 'trunk',
-        title: 'Trunk'
+        title: 'Trunk',
+        icon: '#trunk'
     },
     {
         id   : 'seat',
@@ -12,27 +13,33 @@ var menuItems = [
         items: [
             {
                 id: 'seat -1',
-                title: 'Driver'
+                title: 'Driver',
+                icon: '#seat'
             },
             {
                 id: 'seat 0',
-                title: 'Passenger'
+                title: 'Passenger',
+                icon: '#seat'
             },
             {
                 id: 'seat 1',
-                title: 'Back 1'
+                title: 'Back 1',
+                icon: '#seat'
             },
             {
                 id: 'seat 2',
-                title: 'Back 2'
+                title: 'Back 2',
+                icon: '#seat'
             },
             {
                 id: 'seat 3',
-                title: 'Back 3'
+                title: 'Back 3',
+                icon: '#seat'
             },
             {
                 id: 'seat 4',
-                title: 'Back 4'
+                title: 'Back 4',
+                icon: '#seat'
             }
         ]
     },
@@ -43,7 +50,8 @@ var menuItems = [
     },
     {
         id   : 'hood',
-        title: 'Hood'
+        title: 'Hood',
+        icon: '#hood'
     },
     {
         id   : 'window',
@@ -52,19 +60,23 @@ var menuItems = [
         items: [
             {
                 id: 'rlwindow',
-                title: 'RL Window'
+                title: 'RL Window',
+                icon: '#windowLeft'
             },
             {
                 id: 'flwindow',
-                title: 'FL Window'
+                title: 'FL Window',
+                icon: '#windowLeft'
             },
             {
                 id: 'frwindow',
-                title: 'FR Window'
+                title: 'FR Window',
+                icon: '#windowRight'
             },
             {
                 id: 'rrwindow',
-                title: 'RR Window'
+                title: 'RR Window',
+                icon: '#windowRight'
             }
         ]
     },
@@ -75,19 +87,23 @@ var menuItems = [
         items: [
             {
                 id: 'rldoor',
-                title: 'RL Door'
+                title: 'RL Door',
+                icon: '#doorLeft'
             },
             {
                 id: 'fldoor',
-                title: 'FL Door'
+                title: 'FL Door',
+                icon: '#doorLeft'
             },
             {
                 id: 'frdoor',
-                title: 'FR Door'
+                title: 'FR Door',
+                icon: '#doorRight'
             },
             {
                 id: 'rrdoor',
-                title: 'RR Door'
+                title: 'RR Door',
+                icon: '#doorRight'
             }
         ]
     }
