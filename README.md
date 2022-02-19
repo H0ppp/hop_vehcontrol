@@ -4,8 +4,10 @@ FiveM vehicle control commands with a radial menu taken from [Axln - Radial Menu
 - Hood/Trunk Commands
 - Door/Window Commands
 - Engine on/off Command
-- Radial menu using F1 to use commands
-- Icons for each fuction
+- Icons for all menu functions
+- Keybind configurable within GTA settings, default key is F1
+- Added escape key if the NUI focus doesn’t return as expected ( / )
+
 ## Images
 ![Example](examples/main.jpg)
 ![Doors](examples/doors.jpg)
