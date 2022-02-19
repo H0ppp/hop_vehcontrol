@@ -29,4 +29,4 @@ dependencies {
 
 author 'Jake Hopkins'
 description 'Vehicle Control'
-version '1.2'
+version '1.3'
