@@ -1,5 +1,6 @@
 'use strict';
 
+
 var menuItems = [
     {
         id   : 'trunk',
@@ -130,6 +131,15 @@ window.onload = function () {
     });
 
 };
+
+window.addEventListener('keypress', (e) => {
+    console.log(e.keyCode);
+    if(e.key === '/'){
+        console.log("Escape key pressed");
+        e.preventDefault();
+        NUIclose();
+    }
+});
 
 
 function NUIclose() {
