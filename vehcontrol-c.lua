@@ -93,7 +93,7 @@ RegisterCommand("rlwindow", function()
     windowToggle(3 , 2)
 end, false)
 
--- Other
+-- Other Vehicle Commands
 
 RegisterCommand("engine", function()
     engineToggle()
@@ -103,3 +103,14 @@ RegisterCommand("seat",function(source, args, raw)
     local seat = tonumber(args[1])
     changeSeat(seat)
 end, false)
+
+-- Events
+
+RegisterKeyMapping('engine', 'Toggle Engine', 'keyboard', Config.engineBind)
+
+AddEventHandler("baseevents:enteringVehicle", function(targetVehicle, vehicleSeat, vehicleDisplayName)
+    if(Config.disableAutostart) then 
+        SetVehicleEngineOn(targetVehicle,false,false,true)
+        print("success")
+    end
+end)

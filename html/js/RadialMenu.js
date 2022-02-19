@@ -586,5 +586,5 @@ function NUIclose() {
         body: JSON.stringify({
             itemId: 'close'
         })
-    }).then(resp => resp.json()).then(resp => console.log(resp));
+    }).then(resp => resp.json());
 }
