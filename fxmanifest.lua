@@ -23,9 +23,8 @@ files {
     'html/js/main.js',
     'html/js/RadialMenu.js'
 }
-dependencies {
-    'baseevents'
-}
+
+dependency 'baseevents'
 
 author 'Jake Hopkins'
 description 'Vehicle Control'

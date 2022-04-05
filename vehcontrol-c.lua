@@ -31,9 +31,9 @@ function engineToggle() -- Check engine is on/off and do opposite
     local vehicle = GetVehiclePedIsIn(player)
     if(GetPedInVehicleSeat(vehicle,-1) == player) then
         if(GetIsVehicleEngineRunning(vehicle)) then 
-            SetVehicleEngineOn(vehicle,false,false,true)
+            SetVehicleEngineOn(vehicle,false,false,Config.disableAutostart)
         else
-            SetVehicleEngineOn(vehicle,true,false,true)
+            SetVehicleEngineOn(vehicle,true,false,Config.disableAutostart)
         end
     end
 end
@@ -108,9 +108,23 @@ end, false)
 
 RegisterKeyMapping('engine', 'Toggle Engine', 'keyboard', Config.engineBind)
 
-AddEventHandler("baseevents:enteringVehicle", function(targetVehicle, vehicleSeat, vehicleDisplayName)
-    if(Config.disableAutostart) then 
-        SetVehicleEngineOn(targetVehicle,false,false,true)
-        print("success")
+RegisterNetEvent("hop_vehcontrol:enterVehicle")
+RegisterNetEvent("hop_vehcontrol:exitVehicle")
+
+AddEventHandler('hop_vehcontrol:enterVehicle', function(vehicle, seat)
+    print('Entered: '.. vehicle)
+  end)
+
+AddEventHandler('hop_vehcontrol:exitVehicle', function(vehicle, seat)
+    print('Exited: '.. vehicle)
+  end)
+
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)
+        if(Config.keepEngineRunning) then
+
+        end
     end
 end)
